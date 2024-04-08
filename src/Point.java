@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
 public class Point {
-    float x;
-    float y;
+    protected float x = 0.0f;
+    protected float y = 0.0f;
 
     public Point(float x, float y) {
         this.x = x;
@@ -38,6 +38,6 @@ public class Point {
 
     @Override
     public String toString() {
-        return Arrays.toString(getXY());
+        return "(" + getX() + ", " +getY() +")";
     }
 }

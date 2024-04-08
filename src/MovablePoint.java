@@ -1,56 +1,57 @@
 import java.util.Arrays;
 
-public class MovablePoint extends Point{
-    float xSpped;
-    float ySpeed;
+public class MovablePoint extends Point {
+    private float xSpeed = 0.0f;
+    private float ySpeed = 0.0f;
 
-    public MovablePoint(float x, float y, float xSpped, float ySpeed) {
+    public MovablePoint(float x, float y, float xSpeed, float ySpeed) {
         super(x, y);
-        this.xSpped = xSpped;
+        this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
 
-    public MovablePoint() {
-    }
 
-    public MovablePoint(float xSpped, float ySpeed) {
-        this.xSpped = xSpped;
+    public MovablePoint(float xSpeed, float ySpeed) {
+        this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
 
-    public float getxSpped() {
-        return xSpped;
+    public float getXSpeed() {
+        return xSpeed;
     }
 
-    public void setxSpped(float xSpped) {
-        this.xSpped = xSpped;
+    public void setXSpeed(float xSpeed) {
+        this.xSpeed = xSpeed;
     }
 
-    public float getySpeed() {
+    public float getYSpeed() {
         return ySpeed;
     }
 
-    public void setySpeed(float ySpeed) {
+    public void setYSpeed(float ySpeed) {
         this.ySpeed = ySpeed;
     }
 
-    public void setSpped (float xSpped, float ySpeed){
-        this.xSpped = xSpped;
+    public void setSpeed(float xSpeed, float ySpeed) {
+        this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
 
-    public float[] getSpeed (){
-        return new float[]{xSpped, ySpeed};
+    public float[] getSpeed() {
+        return new float[]{xSpeed, ySpeed};
     }
+
 
     @Override
     public String toString() {
-        return "MovablePoint{" +
-                "xSpped=" + xSpped +
-                ", ySpeed=" + ySpeed +
-                ", x=" + x +
-                ", y=" + y +
-                '}';
+        return "(" + super.getX() + ", " + super.getY() + ")"
+                + ", speed = " + "(" + this.getXSpeed() + ", "
+                + this.getYSpeed() + ")";
     }
 
+    public MovablePoint move() {
+        x += xSpeed;
+        y += ySpeed;
+        return this;
+    }
 }
